@@ -8,6 +8,10 @@
     "hash": "5f10c3e4d9709344153aecf65faaef492ddcb0d1"
   },
   {
+    "repo": "https://github.com/kitnic/CC2538-dev-board",
+    "hash": "0246dd2058ca41cb67412f475dd9aa7051eb6a9a"
+  },
+  {
     "repo": "https://github.com/kitnic-forks/Bus_Pirate",
     "hash": "0ca376a0eedd116e3ffdbd5dfd5398a67fdba708"
   },
