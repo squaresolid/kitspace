@@ -1,5 +1,17 @@
 [
   {
+    "repo": "https://github.com/kitnic/sam_board",
+    "hash": "7caed035715c3fc84f1dd1f275b90c613719c141"
+  },
+  {
+    "repo": "https://github.com/kitnic/arduino-uno",
+    "hash": "b0c9ab1454e1b01d8fee568c1690b6552085021a"
+  },
+  {
+    "repo": "https://github.com/kasbah/Bus_Pirate",
+    "hash": "0562da257da846b506ae59d208482f81f894a848"
+  },
+  {
     "repo": "https://github.com/kitnic/HACK",
     "hash": "9ae6221d6c72ed27ad6e1e2bc0cd689e1c3a6840"
   },
@@ -9,14 +21,18 @@
   },
   {
     "repo": "https://github.com/kasbah/nomech",
-    "hash": "c528fe84810cacb68b7a1d741b930d86448bc64b"
+    "hash": "578786893669eec70b16254f60bf527ed54f1101"
   },
   {
     "repo": "https://github.com/kasbah/push-on-hold-off",
-    "hash": "e76e1429da0303d2427b562890227141d06d2979"
+    "hash": "990c236ba8220f950475221e0105e9213cdc4fce"
+  },
+  {
+    "repo": "https://github.com/kitnic/BQ25570_Harvester",
+    "hash": "06547ddac9e74a276df7cb6e349f4727b38c2bc0"
   },
   {
     "repo": "https://github.com/JarrettR/USBvil",
-    "hash": "5166b1e07b6be2e3b4af97b6ae239580b830266b"
+    "hash": "3832f59edf0a5128e121c289e2159ea012fcb84a"
   }
 ]

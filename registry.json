@@ -1,11 +1,15 @@
 [
   {
+    "repo": "https://github.com/kitnic/sam_board",
+    "hash": "7caed035715c3fc84f1dd1f275b90c613719c141"
+  },
+  {
     "repo": "https://github.com/kitnic/arduino-uno",
     "hash": "b0c9ab1454e1b01d8fee568c1690b6552085021a"
   },
   {
-    "repo": "https://github.com/kitnic/Bus_Pirate",
-    "hash": "36a8b2bb32ccb4e96556d3571185c0d47df083a2"
+    "repo": "https://github.com/kasbah/Bus_Pirate",
+    "hash": "0562da257da846b506ae59d208482f81f894a848"
   },
   {
     "repo": "https://github.com/kitnic/HACK",
