@@ -2,5 +2,9 @@
   {
     "repo": "https://github.com/kitnic/HACK",
     "hash": "9ce81027df5e860ee78c101ade40bf73724c5ed6"
+  },
+  {
+    "repo": "https://github.com/kanflo/aaduino",
+    "hash": "49ca4831e2f550d0c9cccb2301b42fd510ba3c3a"
   }
 ]

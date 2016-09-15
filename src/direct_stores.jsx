@@ -5,20 +5,12 @@ const digikey_data   = require('1-click-bom/lib/data/digikey.json');
 const farnell_data   = require('1-click-bom/lib/data/farnell.json');
 const countries_data = require('1-click-bom/lib/data/countries.json');
 
-const get = function(url, arg, callback, error_callback) {
-  var line, notify, timeout, xhr;
-  line = arg.line, notify = arg.notify, timeout = arg.timeout;
-  if (line == null) {
-    line = null;
-  }
-  if (notify == null) {
-    notify = false;
-  }
+function get(url, options, callback, error_callback) {
+  let timeout = options.timeout;
   if (timeout == null) {
     timeout = 60000;
   }
-  xhr = new XMLHttpRequest;
-  xhr.line = line;
+  const xhr = new XMLHttpRequest;
   xhr.open('GET', url, true);
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.url = url;
@@ -39,19 +31,16 @@ const get = function(url, arg, callback, error_callback) {
 };
 
 
-const getLocation = function(callback) {
-  var code;
-  var used_country_codes = [];
+function getLocation(callback) {
+  let code;
+  const used_country_codes = [];
   for (let key in countries_data) {
     code = countries_data[key];
     used_country_codes.push(code);
   }
   const url = 'https://freegeoip.kitnic.it';
-  return get(url, {
-    timeout: 5000
-  }, (function() {
-    return function(event) {
-      var response;
+  return get(url, {timeout: 5000}, event => {
+      let response;
       response = JSON.parse(event.target.responseText);
       code = response.country_code;
       if (code === 'GB') {
@@ -61,8 +50,7 @@ const getLocation = function(callback) {
         code = 'Other';
       }
       return callback(code);
-    };
-  })(this), function() {
+  }, () => {
     return callback('Other');
   });
 };
