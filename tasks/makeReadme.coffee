@@ -1,7 +1,7 @@
 fs        = require('fs')
 utils     = require('./utils/utils')
 glob      = require('glob')
-marky  = require('marky-markdown')
+marky     = require('marky-markdown')
 path      = require('path')
 htmlToJsx = require('htmltojsx')
 
@@ -24,6 +24,6 @@ else
     try readme = deps[1]
     if readme?
         pkg = {repository: {url: info.repo}}
-        html = marky(fs.readFileSync(readme, 'utf8'), {package: pkg}).html()
+        html = marky(fs.readFileSync(readme, 'utf8'), {package: pkg})
     reactComponent = converter.convert("<div class='readme'>#{html}</div>")
     fs.writeFileSync(readmeJsx, "const React = require('react');\n" + reactComponent + "\nmodule.exports = Readme;\n")
