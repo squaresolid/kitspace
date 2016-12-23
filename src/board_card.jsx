@@ -36,12 +36,12 @@ let BoardCard = React.createClass({
           <LazyLoad once={true}
             component={React.createElement('div', {className:'img'})}
             distance={300}>
-            <FadeImage src={'boards/' + this.props.data.id + '/images/top.svg'}
+            <FadeImage src={'boards/' + this.props.data.id + '/images/top.png'}
               className='img' />
           </LazyLoad>
     } else {
       image =
-          <img src={'boards/' + this.props.data.id + '/images/top.svg'}
+          <img src={'boards/' + this.props.data.id + '/images/top.png'}
              className = 'img' />
     }
     return (
