@@ -48,8 +48,20 @@
     "hash": "b6d13fab2205358b28e3d8d2ada3d13327a2d972"
   },
   {
+    "repo": "https://github.com/pcbsz/SimpleAmp",
+    "hash": "191814ff027424dacb2dcb6338dcb106aabb6e34"
+  },
+  {
+    "repo": "https://github.com/pcbsz/AtariSynth",
+    "hash": "01f1a8f3757f1df6ac006d43ca73025f4823716d"
+  },
+  {
     "repo": "https://git.defproc.co.uk/DefProc/piezo-sensor",
     "hash": "1ef4e9e30e43871aa7bf8f66e8445466eba78b1f"
+  },
+  {
+    "repo": "https://github.com/pcbsz/LM386",
+    "hash": "4357cd14d514eb6f87ac8fccb7892a4360037be4"
   },
   {
     "repo": "https://github.com/kanflo/aaduino",
