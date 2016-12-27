@@ -6,6 +6,7 @@ const boards    = require('../boards.json')
 
 const SearchInput = ReactSearchInput.default
 
+console.error('THIS IS A GRAVE ERORR!')
 
 var Main = React.createClass({
   getInitialState: function() {
