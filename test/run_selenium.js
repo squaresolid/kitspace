@@ -8,7 +8,7 @@ const driver = new webdriver.Builder()
   .withCapabilities({
       'browserName': 'chrome',
       'platform': 'Windows 10',
-      'version': '55.0',
+      'version': '50.0',
       'username': username,
       'accessKey': accessKey
   })
