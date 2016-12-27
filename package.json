@@ -27,7 +27,7 @@
     "reactify": "^1.1.1",
     "selenium-webdriver": "^3.0.1",
     "source-map-support": "^0.4.0",
-    "svgo": "^0.6.6",
+    "svgo": "^0.7.1",
     "uglifyify": "^3.0.1",
     "uglifyjs": "^2.4.10"
   },
@@ -55,7 +55,7 @@
     "react-search-input": "~0.10.1",
     "redux": "^3.6.0",
     "semantic-ui-css": "^2.2.4",
-    "semantic-ui-react": "^0.62.3",
+    "semantic-ui-react": "^0.63.1",
     "superagent": "^3.3.1",
     "xml-element-string": "^1.0.0"
   },
