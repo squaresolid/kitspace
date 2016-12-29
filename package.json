@@ -28,7 +28,8 @@
     "source-map-support": "^0.4.0",
     "svgo": "^0.6.6",
     "uglifyify": "^3.0.1",
-    "uglifyjs": "^2.4.10"
+    "uglifyjs": "^2.4.10",
+    "svg2png": "^4.1.1"
   },
   "scripts": {
     "watch": "./scripts/watch",

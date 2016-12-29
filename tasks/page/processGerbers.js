@@ -5,6 +5,7 @@ const yaml         = require('js-yaml');
 const Svgo         = require('svgo');
 const utils        = require('../utils/utils');
 const boardBuilder = require('../../src/board_builder');
+const svg2png      = require('svg2png');
 const cp           = require('child_process');
 const Jszip        = require('jszip');
 
@@ -124,7 +125,16 @@ if (require.main !== module) {
             if (error != null) {
                 throw error;
             }
-            svgo.optimize(stackup.top.svg, result =>
+            svgo.optimize(stackup.top.svg, result => {
+                svg2png(result.data, {width: 240, height: 180}).then(buffer =>
+                    fs.writeFile(topPngPath, buffer, function(e) {
+                        if (e != null) {
+                            throw e;
+                        }
+                })).catch(function(e) {
+                    console.error(e);
+                    return process.exit(1);
+                });
                 fs.writeFile(topSvgPath, result.data, function(err) {
                     if (err != null) {
                         console.error(`Could not write top svg for ${folder}`);
@@ -132,7 +142,7 @@ if (require.main !== module) {
                         return process.exit(1);
                     }
                 })
-            );
+            });
             return svgo.optimize(stackup.bottom.svg, result =>
                 fs.writeFile(bottomSvgPath, result.data, function(err) {
                     if (err != null) {
