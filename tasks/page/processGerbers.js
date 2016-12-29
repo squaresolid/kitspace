@@ -125,16 +125,16 @@ if (require.main !== module) {
             if (error != null) {
                 throw error;
             }
+            svg2png(stackup.top.svg, {width: 240, height: 180}).then(buffer =>
+                fs.writeFile(topPngPath, buffer, function(e) {
+                    if (e != null) {
+                        throw e;
+                    }
+            })).catch(function(e) {
+                console.error(e);
+                return process.exit(1);
+            });
             svgo.optimize(stackup.top.svg, result => {
-                svg2png(result.data, {width: 240, height: 180}).then(buffer =>
-                    fs.writeFile(topPngPath, buffer, function(e) {
-                        if (e != null) {
-                            throw e;
-                        }
-                })).catch(function(e) {
-                    console.error(e);
-                    return process.exit(1);
-                });
                 fs.writeFile(topSvgPath, result.data, function(err) {
                     if (err != null) {
                         console.error(`Could not write top svg for ${folder}`);
