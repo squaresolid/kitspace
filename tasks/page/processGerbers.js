@@ -8,6 +8,7 @@ const boardBuilder = require('../../src/board_builder');
 const cp           = require('child_process');
 const Jszip        = require('jszip');
 const {Rsvg}       = require('librsvg')
+const {Readable}   = require('stream')
 
 
 const svgo = new Svgo({
@@ -127,14 +128,18 @@ if (require.main !== module) {
             }
             const rsvg = new Rsvg()
             rsvg.on('finish', () => {
-                const buffer = rsvg.render({format:'png', width:240, height:180})
-                fs.writeFile(topPngPath, buffer, function(e) {
+                const render = rsvg.render({format:'png', width:240, height:180})
+                fs.writeFile(topPngPath, render.data, function(e) {
                     if (e != null) {
                         console.error(e)
                         return process.exit(1)
                     }
                 })
             })
+            const s = new Readable
+            s.push(stackup.top.svg)
+            s.push(null)
+            s.pipe(rsvg)
             svgo.optimize(stackup.top.svg, result => {
                 fs.writeFile(topSvgPath, result.data, function(err) {
                     if (err != null) {
