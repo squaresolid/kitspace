@@ -28,8 +28,7 @@
     "source-map-support": "^0.4.0",
     "svgo": "^0.6.6",
     "uglifyify": "^3.0.1",
-    "uglifyjs": "^2.4.10",
-    "svg2png": "^4.1.1"
+    "uglifyjs": "^2.4.10"
   },
   "scripts": {
     "watch": "./scripts/watch",
@@ -45,6 +44,7 @@
     "1-click-bom": "github:monostable/nodejs-1-click-bom",
     "babel-polyfill": "^6.13.0",
     "browser-version": "^1.0.0",
+    "librsvg": "^0.7.0",
     "lodash.camelcase": "^4.3.0",
     "react": "^15.3.0",
     "react-document-title": "^2.0.1",
