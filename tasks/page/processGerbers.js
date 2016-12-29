@@ -5,9 +5,9 @@ const yaml         = require('js-yaml');
 const Svgo         = require('svgo');
 const utils        = require('../utils/utils');
 const boardBuilder = require('../../src/board_builder');
-const svg2png      = require('svg2png');
 const cp           = require('child_process');
 const Jszip        = require('jszip');
+const {Rsvg}       = require('librsvg')
 
 
 const svgo = new Svgo({
@@ -125,15 +125,16 @@ if (require.main !== module) {
             if (error != null) {
                 throw error;
             }
-            svg2png(stackup.top.svg, {width: 240, height: 180}).then(buffer =>
+            const rsvg = new Rsvg()
+            rsvg.on('finish', () => {
+                const buffer = rsvg.render({format:'png', width:240, height:180})
                 fs.writeFile(topPngPath, buffer, function(e) {
                     if (e != null) {
-                        throw e;
+                        console.error(e)
+                        return process.exit(1)
                     }
-            })).catch(function(e) {
-                console.error(e);
-                return process.exit(1);
-            });
+                })
+            })
             svgo.optimize(stackup.top.svg, result => {
                 fs.writeFile(topSvgPath, result.data, function(err) {
                     if (err != null) {
