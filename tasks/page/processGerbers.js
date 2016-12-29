@@ -8,7 +8,6 @@ const boardBuilder = require('../../src/board_builder');
 const cp           = require('child_process');
 const Jszip        = require('jszip');
 const {Rsvg}       = require('librsvg')
-const {Readable}   = require('stream')
 
 
 const svgo = new Svgo({
@@ -136,10 +135,6 @@ if (require.main !== module) {
                     }
                 })
             })
-            const s = new Readable
-            s.push(stackup.top.svg)
-            s.push(null)
-            s.pipe(rsvg)
             svgo.optimize(stackup.top.svg, result => {
                 fs.writeFile(topSvgPath, result.data, function(err) {
                     if (err != null) {
@@ -147,6 +142,7 @@ if (require.main !== module) {
                         console.error(err);
                         return process.exit(1);
                     }
+                    fs.createReadStream(topSvgPath).pipe(rsvg)
                 })
             });
             return svgo.optimize(stackup.bottom.svg, result =>
