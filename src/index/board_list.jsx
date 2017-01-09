@@ -8,7 +8,7 @@ const style = {
     return {
       marginLeft:'10%',
       marginRight:'10%',
-      marginTop:32,
+      marginTop: 32,
       marginBottom: 32,
       display:(show ? 'inherit' : 'none')
     }
@@ -99,7 +99,7 @@ var BoardList = React.createClass({
     return (
       <div>
           {intro}
-        <div style={{margin: 32, textAlign:'center'}}>
+        <div style={{textAlign:'center'}}>
           {cardNodes}
         </div>
       </div>
