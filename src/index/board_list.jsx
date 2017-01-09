@@ -42,7 +42,7 @@ var BoardList = React.createClass({
     var cardNodes = this.props.data.map(function(data, index) {
       return (
         <BoardCard data={data} key={data.id + index}
-          lazyLoad={ true }/>
+          lazyLoad={true}/>
       )
     })
     var intro = (
@@ -99,7 +99,7 @@ var BoardList = React.createClass({
     return (
       <div>
           {intro}
-        <div style={{textAlign:'center'}}>
+        <div className='boardList'>
           {cardNodes}
         </div>
       </div>

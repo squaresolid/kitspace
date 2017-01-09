@@ -1,0 +1,7 @@
+@import 'board_card';
+
+.boardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
