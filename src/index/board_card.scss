@@ -25,7 +25,6 @@ $mobile-summary-h: $summary-h * 3 + 48;
     margin-right: 8px;
     margin-top: 8px;
     overflow: hidden;
-    flex: 0 0 auto;
     width: $card-w + 32px + 16px;
 
     @include breakpoint(mobile) {
