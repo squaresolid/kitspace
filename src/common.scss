@@ -1,22 +1,21 @@
 //these are also defined in media_queries.js and need to be adjusted there and here
 @mixin breakpoint($point) {
     @if $point == mobile {
-        @media (orientation: portrait) and (min-device-width: 320px)
-        and (max-device-width: 480px)
+        @media (orientation: portrait) and (max-device-width: 480px)
         , (orientation: landscape) and (max-device-width: 790px)
-        , (handheld) {
+        {
             @content;
         }
     } @else if $point == mobile_or_small_width {
-        @media (orientation: portrait) and (min-device-width: 320px)
-        and (max-device-width: 480px)
+        @media (orientation: portrait) and (max-device-width: 480px)
         , (orientation: landscape) and (max-device-width: 790px)
-        , (handheld)
-        , (max-width: 810px) {
+        , (max-width: 810px)
+        {
             @content;
         }
     } @else if $point == small_width {
-        @media (max-width: 810px) {
+        @media (max-width: 810px)
+        {
             @content;
         }
     }
