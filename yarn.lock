@@ -682,19 +682,19 @@ babel-register@^6.18.0, babel-register@^6.3.13:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.0.0, babel-runtime@^6.11.6, babel-runtime@^6.22.0, babel-runtime@^6.9.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
-  dependencies:
-    core-js "^2.4.0"
-    regenerator-runtime "^0.10.0"
-
-babel-runtime@^6.18.0, babel-runtime@^6.9.1:
+babel-runtime@^6.0.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.9.0, babel-runtime@^6.9.1:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.18.0.tgz#0f4177ffd98492ef13b9f823e9994a02584c9078"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.9.5"
+
+babel-runtime@^6.22.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
 
 babel-template@^6.14.0, babel-template@^6.15.0, babel-template@^6.16.0, babel-template@^6.8.0:
   version "6.16.0"
@@ -4161,9 +4161,9 @@ semantic-ui-css@^2.2.4:
   dependencies:
     jquery x.*
 
-semantic-ui-react@^0.66.0:
-  version "0.66.0"
-  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.66.0.tgz#6be04edc6a92be3c39f9e816bfb97f632dff8090"
+semantic-ui-react@kasbah/Semantic-UI-React:
+  version "0.67.0"
+  resolved "https://codeload.github.com/kasbah/Semantic-UI-React/tar.gz/c70f6119ec304ed3bba412ca25a26ca203ef5714"
   dependencies:
     babel-runtime "^6.22.0"
     classnames "^2.1.5"
