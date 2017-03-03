@@ -39,38 +39,42 @@ const TsvTable = React.createClass({
     }
   },
   mpnCells(contents, rowIndex, columnIndex) {
+    const number = contents[1]
+    if (number === '') {
+      return contents.map(t => h(semantic.Table.Cell, t))
+    }
     const activePopup = this.state.activePopup
     const active = activePopup
       && activePopup[0] === rowIndex
       && activePopup[1] === columnIndex
-    const cells  = contents.map(t => h(semantic.Table.Cell, {active}, t))
-    const number = contents[1]
-    if (number !== '') {
-      const setActivePopup = () => {
-        this.setState({activePopup: [rowIndex, columnIndex]})
-      }
-      const setInactivePopup = () => {
-        if (active) {
-          this.setState({activePopup: null})
-        }
-      }
-      const part = this.props.parts.reduce((prev, part) => {
-        if (prev) {
-          return prev
-        }
-        if (part && part.mpn && part.mpn.part === number) {
-          return part
-        }
-      }, null) || {}
-      return cells.map(cell => {
-        return h(MpnPopup, {
-          onOpen  : setActivePopup,
-          onClose : setInactivePopup,
-          trigger : cell,
-          part    : part,
-        })
-      })
+    const setActivePopup = () => {
+      this.setState({activePopup: [rowIndex, columnIndex]})
     }
+    const setInactivePopup = () => {
+      if (active) {
+        this.setState({activePopup: null})
+      }
+    }
+    const props = {
+      active,
+      onMouseOver : setActivePopup,
+      onMouseOut  : setInactivePopup,
+    }
+    const part = this.props.parts.reduce((prev, part) => {
+      if (prev) {
+        return prev
+      }
+      if (part && part.mpn && part.mpn.part === number) {
+        return part
+      }
+    }, null) || {}
+    const cells = [
+      h(semantic.Table.Cell, props, contents[0]),
+      h(semantic.Table.Cell, props, [
+        contents[1],
+        h(MpnPopup, {part, open: active, trigger:h('div', {style:{background:'red', width:10, height:10}})}),
+      ]),
+    ]
     return cells
   },
   render() {
