@@ -1,1 +1,2 @@
 /jelly /boards/github.com/monostable/jelly
+/gitlab/* https://gitlab.kitnic.it/gitlab/:splats 200
