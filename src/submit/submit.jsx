@@ -15,16 +15,27 @@ const board_colors = require('./board_colors')
 const initial_state = immutable.Map({
   board: immutable.Map({
     status    : 'not sent',
-    color     : 'green',
-    yaml      : null,
     url       : null,
+    yaml      : null,
     files     : null,
-    svgs      : null,
-    stackup   : null,
-    message   : '',
-    bom       : '',
-    parts     : [],
-    readme    : null,
+    gerbers: {
+      color     : 'green',
+      svgs      : null,
+      stackup   : null,
+      errors : [],
+      warnings: [],
+    }
+    bom: {
+      tsv: ''
+      parts: [],
+      errors: [],
+      warnings: [],
+    }
+    readme {
+      rendered: null,
+      errors: [],
+      warnings: [],
+    }
   }),
 })
 

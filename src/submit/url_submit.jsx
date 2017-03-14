@@ -162,11 +162,11 @@ const UrlSubmit = React.createClass({
              })
              .catch(err => {
                console.error(err)
-               dispatch({type: 'setBoardError', value: 'README could not be retrieved'})
+               dispatch({type: 'addBoardWarning', value: 'README could not be retrieved'})
              })
          }
          else {
-           dispatch({type: 'setBoardError', value: 'No README found in repository'})
+           dispatch({type: 'addBoardWarning', value: 'No README found in repository'})
          }
          if (yaml) {
            superagent.get(url.resolve(GIT_CLONE_SERVER, path.join(root, yaml)))
