@@ -1,5 +1,5 @@
 const superagent = require('superagent')
-const ramda      = require('ramda')
+const flatten    = require('lodash.flatten')
 
 const partinfoURL = 'https://partinfo.kitnic.it/graphql'
 
@@ -45,9 +45,9 @@ function post(mpn) {
 
 function getPartinfo(lines) {
   const requests = lines.map(line => {
-        return Promise.all(line.partNumbers.map(post))
-    })
-  return Promise.all(requests).then(ramda.flatten)
+    return Promise.all(line.partNumbers.map(post))
+  })
+  return Promise.all(requests).then(flatten)
 }
 
 module.exports = getPartinfo

@@ -1,7 +1,7 @@
 const React       = require('react')
 const {h, a, div} = require('react-hyperscript-helpers')
 const semantic    = require('semantic-ui-react')
-const ramda       = require('ramda')
+const flatten     = require('lodash.flatten')
 
 const FadeImage = require('../fade_image')
 
@@ -38,7 +38,7 @@ function reorder(specs) {
     acc[index].push(spec)
     return acc
   }, importance.map(x => []).concat([[]]))
-  return ramda.flatten(groups)
+  return flatten(groups)
 }
 
 function specRow(spec) {
