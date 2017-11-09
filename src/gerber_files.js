@@ -2,6 +2,9 @@ const whatsThatGerber = require('whats-that-gerber')
 const path = require('path')
 
 function gerberFiles(files, info) {
+  if (info.gerbers) {
+    return files.filter(f => path.dirname(f) === info.gerbers)
+  }
   const layers = files.map(f => ({path: f, type: whatsThatGerber(f)}))
     .filter(({type}) => type !== 'drw')
   const possibleGerbers = layers.map(({path}) => path)
