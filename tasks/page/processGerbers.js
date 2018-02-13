@@ -56,19 +56,16 @@ const svgo = new Svgo({
 
 if (require.main !== module) {
   module.exports = function(config, folder) {
-    let file, gerbers, info
+    let file
+    let info = {}
     try {
       file = fs.readFileSync(`${folder}/kitnic.yaml`)
     } catch (error) {}
     if (file != null) {
       info = yaml.safeLoad(file)
     }
-    if (__guard__(info, x => x.gerbers) != null) {
-      gerbers = globule.find(`${folder}/${info.gerbers}/*`)
-    } else {
-      const files = globule.find(`${folder}/**/*`)
-      gerbers = gerberFiles(files)
-    }
+    const files = globule.find(`${folder}/**/*`)
+    const gerbers = gerberFiles(files, info.gerbers)
     if (gerbers.length === 0) {
       console.error(`No gerbers found for ${folder}.`)
       process.exit(1)
